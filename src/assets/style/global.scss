@@ -1,0 +1,75 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #000;
+  -webkit-text-size-adjust: 100% !important;
+  -moz-text-size-adjust: 100% !important;
+  text-size-adjust: 100% !important;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+input {
+  border: none; //去除边框
+  outline: none; //可以去除点击input时的border
+}
+
+@keyframes scaleBig {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+.wrap{
+  width: 80vw;
+  background: #333;
+  margin: 0 auto;
+  color: #fff;
+  @media screen  and (max-width: 799px) {
+    width: calc(100vw - 20px);
+  }
+}
+
+// 滚动条样式
+/*定义滚动条高宽及背景
+ 高宽分别对应横竖滚动条的尺寸*/
+ ::-webkit-scrollbar
+ {
+   position: fixed;
+   right: 0;
+     width:5px;
+     height:5px;
+     background-color:#F5F5F5;
+ }
+ /*定义滚动条轨道
+  内阴影+圆角*/
+ ::-webkit-scrollbar-track
+ {
+     -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);
+     border-radius:3px;
+     background-color:#000;
+ }
+ /*定义滑块
+  内阴影+圆角*/
+ ::-webkit-scrollbar-thumb
+ {
+     border-radius:3px;
+     -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.3);
+     background-color:#555;
+ }
+ .front-color{
+   color: #fff;
+ }
