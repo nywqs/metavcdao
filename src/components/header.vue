@@ -65,7 +65,7 @@
               <li class="dropdown-item" @click="connect('MetaMask')">
                 我的钱包
               </li>
-              <li class="dropdown-item" @click="$refs.metaMask.unconnect()">
+              <li class="dropdown-item" @click="unconnect('MetaMask')">
                 断开链接
               </li>
             </ul>
@@ -113,6 +113,7 @@ export default {
     };
   },
   mounted() {
+    console.log(localStorage.name);
     if (localStorage.name) {
       this.wallet = localStorage.name;
     }
@@ -136,6 +137,10 @@ export default {
     },
     async connect(type) {
       await this.$refs["metaMask"].init();
+    },
+    async  unconnect(type) {
+      localStorage.clear();
+      await this.$refs["metaMask"].unconnect;
     },
     myWallet(data) {
       localStorage.name = data;
